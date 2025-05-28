@@ -1,7 +1,7 @@
 {
   "name": "Reo Mesh Calculator",
   "short_name": "Mesh Calc",
-  "start_url": "./", //Reo-Mesh-Calculator-5/
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
