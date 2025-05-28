@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="/Reo-Mesh-Calculator/manifest.json">
-</head>
+<link rel="manifest" href="/Reo-Mesh-Calculator-5/manifest.json"> </head>
 <body>
 
     <div class="calculator-container">
@@ -84,8 +83,7 @@
                 </div>
             </div>
 
-            <div id="hoopInputSection" style="display: none;"> <!-- Hidden by default -->
-                <div class="input-group">
+            <div id="hoopInputSection" style="display: none;"> <div class="input-group">
                     <label for="hoopDiameterInput">Hoop Diameter (mm):</label>
                     <input type="number" id="hoopDiameterInput" value="400" min="0">
                 </div>
@@ -118,7 +116,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/Reo-Mesh-Calculator/service-worker.js').then(function(registration) {
+      navigator.serviceWorker.register('/Reo-Mesh-Calculator-5/service-worker.js').then(function(registration) { // UPDATED PATH
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       }, function(err) {
