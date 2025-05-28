@@ -1,7 +1,7 @@
 {
   "name": "Reo Mesh Calculator",
   "short_name": "Mesh Calc",
-  "start_url": "./",
+  "start_url": "./", // This is relative to the PWA's scope, which GitHub Pages sets for the repo
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
