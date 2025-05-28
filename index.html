@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reo Cage Cost Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="/Reo-Mesh-Calculator/manifest.json">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h1>Reo Cage Cost Calculator</h1>
+
+        <fieldset class="pricing-parameters">
+            <legend>Pricing Parameters</legend>
+            <div class="input-group">
+                <label for="mainBarPricePerTonne">Main Bar Price ($/tonne):</label>
+                <input type="number" id="mainBarPricePerTonne" value="2600" min="0" step="100">
+            </div>
+            <div class="input-group">
+                <label for="ligaturePricePerTonne">Ligature/Hoop Price ($/tonne):</label>
+                <input type="number" id="ligaturePricePerTonne" value="2700" min="0" step="100">
+            </div>
+            <div class="input-group">
+                <label for="processingCostPerTonne">Processing Cost ($/tonne):</label>
+                <input type="number" id="processingCostPerTonne" value="800" min="0" step="50">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Main Bars</legend>
+            <div class="input-group">
+                <label for="mainBarDiameter">Diameter (mm):</label>
+                <select id="mainBarDiameter">
+                    <option value="12">12mm</option>
+                    <option value="16">16mm</option>
+                    <option value="20">20mm</option>
+                    <option value="24">24mm</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="mainBarLength">Length (mm):</label>
+                <input type="number" id="mainBarLength" value="6000" min="0">
+            </div>
+            <div class="input-group">
+                <label for="numMainBars">Number of Bars:</label>
+                <input type="number" id="numMainBars" value="4" min="0">
+            </div>
+            <div class="result-display">
+                <label>Total Weight:</label><span id="mainBarTotalWeight">0.00 kg</span>
+                <label>Cost:</label><span id="mainBarCost">$0.00</span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ligatures/Hoops</legend>
+            <div class="input-group checkbox-group">
+                <input type="checkbox" id="useHoops">
+                <label for="useHoops">Use Hoops instead of Ligatures</label>
+            </div>
+
+            <div class="input-group">
+                <label for="ligatureDiameter">Bar Diameter (mm):</label>
+                <select id="ligatureDiameter">
+                    <option value="6">6mm</option>
+                    <option value="10">10mm</option>
+                    <option value="12">12mm</option>
+                    <option value="16">16mm</option>
+                </select>
+            </div>
+
+            <div id="ligatureInputSection">
+                <div class="input-group">
+                    <label for="ligatureDim1">Dimension 1 (mm):</label>
+                    <input type="number" id="ligatureDim1" value="200" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="ligatureDim2">Dimension 2 (mm):</label>
+                    <input type="number" id="ligatureDim2" value="300" min="0">
+                </div>
+            </div>
+
+            <div id="hoopInputSection" style="display: none;"> <!-- Hidden by default -->
+                <div class="input-group">
+                    <label for="hoopDiameterInput">Hoop Diameter (mm):</label>
+                    <input type="number" id="hoopDiameterInput" value="400" min="0">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="numLigatures">Number of Ligatures/Hoops:</label>
+                <input type="number" id="numLigatures" value="10" min="0">
+            </div>
+            <div class="result-display">
+                <label>Single Ligature/Hoop Length:</label><span id="ligaturePerLength">0.00 mm</span>
+                <label>Total Weight:</label><span id="ligatureTotalWeight">0.00 kg</span>
+                <label>Cost:</label><span id="ligatureCost">$0.00</span>
+            </div>
+        </fieldset>
+
+        <div class="result-display processing-summary">
+            <label>Total Material Weight:</label><span id="totalMaterialWeight">0.00 kg</span>
+            <label>Processing Cost:</label><span id="processingCost">$0.00</span>
+        </div>
+
+        <button id="calculateBtn">Calculate Total Cost</button>
+
+        <div class="total-section">
+            <h2>Total Cage Cost: <span id="totalCost">$0.00</span></h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/Reo-Mesh-Calculator/service-worker.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>
+</body>
+</html>
