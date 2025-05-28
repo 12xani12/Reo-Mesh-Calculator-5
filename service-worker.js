@@ -1,13 +1,13 @@
 const CACHE_NAME = 'reo-mesh-calculator-cache-v1';
 const urlsToCache = [
-  '/Reo-Mesh-Calculator-5/', // Explicitly cache the base URL of your repo
+  '/Reo-Mesh-Calculator-5/', // Explicitly cache the base URL of your new repo
   '/Reo-Mesh-Calculator-5/index.html',
   '/Reo-Mesh-Calculator-5/style.css',
   '/Reo-Mesh-Calculator-5/script.js',
   '/Reo-Mesh-Calculator-5/icon-192x192.png',
   '/Reo-Mesh-Calculator-5/icon-512x512.png',
   '/Reo-Mesh-Calculator-5/manifest.json'
-  // Add all other static assets your site uses
+  // Add any other static assets your site uses
 ];
 
 self.addEventListener('install', event => {
